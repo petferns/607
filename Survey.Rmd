@@ -1,0 +1,38 @@
+---
+title: "Survey"
+author: "Peter"
+date: "8/30/2020"
+output:
+  html_document:
+    df_print: paged
+---
+#                     INTRODUCTION 
+#   How Americans View The Coronavirus Crisis?
+#   This survey includes the polls conducted among Americans on thier concern towards cononavirus pandemic. How concerned Americans say they are that they, someone in their family or someone else they know will become infected with the coronavirus. The survey includes number of respondents, population type(adult, new voter, etc), very much concern, conducted by, start and end date of survey, and so on.
+#  The Poll CSV file has been uploaded to my github account and read here.
+#   Link to article - https://projects.fivethirtyeight.com/coronavirus-polls/
+
+
+```{r survey}
+library(RCurl)
+
+x <- getURL("https://raw.githubusercontent.com/petferns/csvfile/master/covid_concern_polls.csv")
+
+y <- read.csv(text = x)
+
+#CREATE DATA FRAME - by including only required data fields 
+df<- data.frame(y$start_date, y$end_date, y$pollster, y$sample_size, y$population, floor(y$very))
+
+#RENAME COLUMNS - in order to give relevant names
+colnames(df) <- c("StartDate","EndDate", "Agency", "Sampling", "Voter", "Concerned")
+
+
+#RENAME COLUMN VALUES - for Voter
+df$Voter[df$Voter == "a"] <- "Adult voters"
+df$Voter[df$Voter == "rv"] <- "Registered voters"
+df$Voter[df$Voter == "lv"] <- "Likely voters"
+
+#CONCLUSION of the survey
+paste("Based on the survey which was conducted between ",min(df$StartDate)," and ",max(df$EndDate), " among Americans to know thier level of concern towards the coronavirus pandemic, on an average ",floor(mean(df$Concerned)),"% of respondents have shown that they are very much concerned of this pandemic.")
+View(df)
+```
