@@ -1,0 +1,27 @@
+name,agegroup,gender,movie,rating
+Gretta  Louis,35-44,F,1,4
+Gretta  Louis,35-44,F,2,3
+Gretta  Louis,35-44,F,3,2
+Gretta  Louis,35-44,F,4,2
+Gretta  Louis,35-44,F,5,4
+Sunitha Noronha,35-44,F,1,5
+Sunitha Noronha,35-44,F,2,5
+Sunitha Noronha,35-44,F,3,2
+Sunitha Noronha,35-44,F,4,3
+Sunitha Noronha,35-44,F,5,3
+Sam Dsouza,18-24,M,1,5
+Sam Dsouza,18-24,M,2,4
+Sam Dsouza,18-24,M,3,2
+Sam Dsouza,18-24,M,4,4
+Sam Dsouza,18-24,M,5,5
+Rohan Dan,25-34,M,1,4
+Rohan Dan,25-34,M,3,1
+Rohan Dan,25-34,M,4,5
+Rohan Dan,25-34,M,5,4
+Florine,55-64,F,1,5
+Florine,55-64,F,2,4
+Florine,55-64,F,3,2
+Florine,55-64,F,4,4
+Jean,55-64,M,1,4
+Jean,55-64,M,3,1
+Jean,55-64,M,5,3
